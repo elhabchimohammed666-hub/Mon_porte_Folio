@@ -1411,6 +1411,7 @@ button { cursor:pointer; font-family:inherit; }
   flex-direction: column;
   gap: 0.75rem;
 }
+#ghAllRepos { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0.75rem; }
 .gh-repo-card {
   background: rgba(0,0,0,0.12);
   border: 1px solid var(--border);
@@ -3189,9 +3190,9 @@ input[type="range"].cust-range::-webkit-slider-thumb:hover { transform: scale(1.
         <div class="tt-track"><div class="tt-thumb"></div></div>
       </button>
       <div class="socials">
-        <a href="https://github.com/elhabchii" target="_blank" class="social-a sa-gh" title="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a href="https://linkedin.com/in/elhabchi-mohammed" target="_blank" class="social-a sa-li" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="mailto:elhabchi@example.com" class="social-a sa-ml" title="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://github.com/elhabchimohammed666-hub" target="_blank" class="social-a sa-gh" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/mohammed-elhabchi-6a7bb237b/" target="_blank" class="social-a sa-li" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="mailto:elhabchimohammed666@gmail.com" class="social-a sa-ml" title="Email"><i class="fa-solid fa-envelope"></i></a>
         <a href="https://wa.me/212705782737" target="_blank" class="social-a sa-wa" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
         <button class="notif-bell-btn" id="notifBellSb" aria-label="Notifications" title="Notifications">
           <i class="fa-solid fa-bell"></i>
@@ -3474,13 +3475,21 @@ input[type="range"].cust-range::-webkit-slider-thumb:hover { transform: scale(1.
     <section class="section" id="projects">
       <div class="sec-ey" data-i18n="sec.proj_ey">07 — Projects</div>
       <h2 class="sec-title" data-i18n="sec.proj_title">Selected Work</h2>
-      <div class="proj-filters reveal" id="projFilters">
+      <div class="proj-filters reveal" id="projFilters" style="display:none">
         <button class="flt-btn active" data-f="all">All Projects</button>
         <button class="flt-btn" data-f="fullstack">Full-Stack</button>
         <button class="flt-btn" data-f="frontend">Frontend</button>
         <button class="flt-btn" data-f="backend">Backend</button>
       </div>
       <div class="proj-grid" id="projGrid"></div>
+
+      <!-- All GitHub repositories (live from the GitHub API) -->
+      <div class="gh-section-title reveal" style="margin:2.5rem 0 .85rem"><i class="fa-brands fa-github"></i> All GitHub Repositories <span id="ghAllCount" style="color:var(--txt-3);font-weight:400"></span></div>
+      <div class="gh-repos-grid" id="ghAllRepos">
+        <div class="gh-repo-skeleton"></div>
+        <div class="gh-repo-skeleton"></div>
+        <div class="gh-repo-skeleton"></div>
+      </div>
 
       <!-- GitHub Live Stats Section — Redesigned -->
       <div class="gh-stats-wrap reveal" style="transition-delay: .1s">
@@ -3492,7 +3501,7 @@ input[type="range"].cust-range::-webkit-slider-thumb:hover { transform: scale(1.
             <div class="gh-hdr-icon-wrap"><i class="fa-brands fa-github"></i></div>
             <div>
               <h3>Live GitHub Activity</h3>
-              <p>Real-time stats · <a href="https://github.com/elhabchii" target="_blank" id="ghProfileLink">github.com/elhabchii</a></p>
+              <p>Real-time stats · <a href="https://github.com/elhabchimohammed666-hub" target="_blank" id="ghProfileLink">github.com/elhabchimohammed666-hub</a></p>
             </div>
           </div>
           <div class="gh-live-badge"><span class="gh-live-dot"></span>Live</div>
@@ -3511,14 +3520,14 @@ input[type="range"].cust-range::-webkit-slider-thumb:hover { transform: scale(1.
             <!-- Profile card -->
             <div class="gh-profile-card">
               <div class="gh-avatar-wrap">
-                <img id="ghAvatar" src="https://avatars.githubusercontent.com/u/elhabchii" alt="Avatar" class="gh-avatar" onerror="this.style.display='none'; document.getElementById('ghAvatarFallback').style.display='flex'"/>
+                <img id="ghAvatar" src="https://avatars.githubusercontent.com/u/239881864?v=4" alt="Avatar" class="gh-avatar" onerror="this.style.display='none'; document.getElementById('ghAvatarFallback').style.display='flex'"/>
                 <div class="gh-avatar-fallback" id="ghAvatarFallback"><i class="fa-brands fa-github"></i></div>
                 <span class="gh-avatar-ring"></span>
               </div>
-              <div class="gh-profile-name" id="ghDisplayName">elhabchii</div>
-              <div class="gh-profile-handle">@<span id="ghLogin">elhabchii</span></div>
-              <div class="gh-profile-bio" id="ghBio">Full-Stack Developer · PHP / Laravel · Web Security</div>
-              <a href="https://github.com/elhabchii" target="_blank" class="gh-visit-btn" id="ghVisitBtn">
+              <div class="gh-profile-name" id="ghDisplayName">Elhabchi Mohammed</div>
+              <div class="gh-profile-handle">@<span id="ghLogin">elhabchimohammed666-hub</span></div>
+              <div class="gh-profile-bio" id="ghBio">Full-Stack Developer dedicated to building responsive, efficient, and scalable web solutions.</div>
+              <a href="https://github.com/elhabchimohammed666-hub" target="_blank" class="gh-visit-btn" id="ghVisitBtn">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Account
               </a>
             </div>
@@ -3528,8 +3537,8 @@ input[type="range"].cust-range::-webkit-slider-thumb:hover { transform: scale(1.
               <div class="gh-stat-row">
                 <div class="gh-stat-row-ico c-blue"><i class="fa-solid fa-code-commit"></i></div>
                 <div class="gh-stat-row-body">
-                  <span class="gh-stat-row-lbl">Total Commits</span>
-                  <span class="gh-stat-row-val" id="ghTotalContrib">2,900+</span>
+                  <span class="gh-stat-row-lbl">Contributions (last 12 months)</span>
+                  <span class="gh-stat-row-val" id="ghTotalContrib">—</span>
                 </div>
               </div>
               <div class="gh-stat-row">
@@ -3581,7 +3590,7 @@ input[type="range"].cust-range::-webkit-slider-thumb:hover { transform: scale(1.
             </div>
             <div class="gh-more-card">
               <div class="gh-more-card-hdr"><i class="fa-solid fa-fire" style="color:#fb923c"></i> Current Streak</div>
-              <div class="gh-more-card-val" id="ghCurrentStreak">4 days</div>
+              <div class="gh-more-card-val" id="ghCurrentStreak">—</div>
             </div>
             <div class="gh-more-card">
               <div class="gh-more-card-hdr"><i class="fa-solid fa-users" style="color:#34d399"></i> Following</div>
@@ -3595,12 +3604,9 @@ input[type="range"].cust-range::-webkit-slider-thumb:hover { transform: scale(1.
 
           <!-- Languages bar -->
           <div class="gh-lang-section">
-            <div class="gh-section-title" style="margin-bottom:.9rem"><i class="fa-solid fa-chart-pie"></i> Languages</div>
+            <div class="gh-section-title" style="margin-bottom:.9rem"><i class="fa-solid fa-chart-pie"></i> Languages (by repositories)</div>
             <div class="gh-lang-list" id="ghLangList">
-              <div class="gh-lang-row"><div class="gh-lang-top"><span class="gh-lang-name"><span class="gh-lang-dot-sm" style="background:#4f5d95"></span>PHP</span><span class="gh-lang-pct">52.0%</span></div><div class="gh-lang-bar-track"><div class="gh-lang-bar-fill" style="width:52%;background:#4f5d95"></div></div></div>
-              <div class="gh-lang-row"><div class="gh-lang-top"><span class="gh-lang-name"><span class="gh-lang-dot-sm" style="background:#f1e05a"></span>JavaScript</span><span class="gh-lang-pct">24.0%</span></div><div class="gh-lang-bar-track"><div class="gh-lang-bar-fill" style="width:24%;background:#f1e05a"></div></div></div>
-              <div class="gh-lang-row"><div class="gh-lang-top"><span class="gh-lang-name"><span class="gh-lang-dot-sm" style="background:#e34c26"></span>HTML</span><span class="gh-lang-pct">14.0%</span></div><div class="gh-lang-bar-track"><div class="gh-lang-bar-fill" style="width:14%;background:#e34c26"></div></div></div>
-              <div class="gh-lang-row"><div class="gh-lang-top"><span class="gh-lang-name"><span class="gh-lang-dot-sm" style="background:#563d7c"></span>CSS</span><span class="gh-lang-pct">10.0%</span></div><div class="gh-lang-bar-track"><div class="gh-lang-bar-fill" style="width:10%;background:#563d7c"></div></div></div>
+              <p style="color:var(--txt-3);font-size:.8rem">Loading…</p>
             </div>
           </div>
 
@@ -3628,7 +3634,7 @@ input[type="range"].cust-range::-webkit-slider-thumb:hover { transform: scale(1.
               <span>More</span>
             </div>
             <!-- Monthly breakdown -->
-            <div class="gh-section-title" style="margin:1.75rem 0 .85rem"><i class="fa-solid fa-chart-bar"></i> Monthly Commits (2025)</div>
+            <div class="gh-section-title" style="margin:1.75rem 0 .85rem"><i class="fa-solid fa-chart-bar"></i> Monthly Contributions (Last 12 Months)</div>
             <div class="gh-bar-chart" id="ghBarChart"></div>
           </div>
         </div>
@@ -3672,21 +3678,21 @@ input[type="range"].cust-range::-webkit-slider-thumb:hover { transform: scale(1.
           opportunity — I'm always open to a conversation. Typically reply within
           24 hours.</p>
           <div class="ch-list">
-            <a href="mailto:elhabchi@example.com" class="ch ch-email">
+            <a href="mailto:elhabchimohammed666@gmail.com" class="ch ch-email">
               <div class="ch-ico"><i class="fa-solid fa-envelope"></i></div>
-              <div><strong>Email</strong><span>elhabchi@example.com</span></div>
+              <div><strong>Email</strong><span>elhabchimohammed666@gmail.com</span></div>
             </a>
             <a href="https://wa.me/212705782737" target="_blank" class="ch ch-wa">
               <div class="ch-ico"><i class="fa-brands fa-whatsapp"></i></div>
               <div><strong>WhatsApp</strong><span>+212 705 782 737</span></div>
             </a>
-            <a href="https://github.com/elhabchii" target="_blank" class="ch ch-gh">
+            <a href="https://github.com/elhabchimohammed666-hub" target="_blank" class="ch ch-gh">
               <div class="ch-ico"><i class="fa-brands fa-github"></i></div>
-              <div><strong>GitHub</strong><span>github.com/elhabchii</span></div>
+              <div><strong>GitHub</strong><span>github.com/elhabchimohammed666-hub</span></div>
             </a>
-            <a href="https://linkedin.com/in/elhabchi-mohammed" target="_blank" class="ch ch-li">
+            <a href="https://www.linkedin.com/in/mohammed-elhabchi-6a7bb237b/" target="_blank" class="ch ch-li">
               <div class="ch-ico"><i class="fa-brands fa-linkedin-in"></i></div>
-              <div><strong>LinkedIn</strong><span>linkedin.com/in/elhabchi-mohammed</span></div>
+              <div><strong>LinkedIn</strong><span>linkedin.com/in/mohammed-elhabchi-6a7bb237b</span></div>
             </a>
           </div>
         </div>
@@ -3727,7 +3733,7 @@ input[type="range"].cust-range::-webkit-slider-thumb:hover { transform: scale(1.
         <a href="#hero"     class="ft-a">Top</a>
         <a href="#projects" class="ft-a">Work</a>
         <a href="#contact"  class="ft-a">Contact</a>
-        <a href="https://github.com/elhabchii" target="_blank" class="ft-a">GitHub</a>
+        <a href="https://github.com/elhabchimohammed666-hub" target="_blank" class="ft-a">GitHub</a>
       </div>
     </footer>
 
@@ -3890,69 +3896,45 @@ const TECH_CATS = [
 /* Projects */
 const PROJECTS = [
   {
-    emoji:'🏪', title:'GestiMall — E-Commerce Management Platform',
-    desc:'A complete e-commerce platform with product catalogue, shopping cart, Stripe payment integration, order management, and a full admin dashboard with sales analytics.',
-    tags:['Laravel','PHP','MySQL','Bootstrap','Stripe API','JavaScript'],
-    type:'fullstack', badge:'b-fs', bLbl:'Full-Stack', demo:'#', repo:'#',
-    role:'Lead Full-Stack Developer',
-    duration:'3 Months',
-    longDesc:'GestiMall is a comprehensive multi-vendor and single-tenant e-commerce system that streamlines retail processes. It features high-performance catalog navigation, real-time inventory management, Stripe checkout integration, dynamic shopping cart storage, automated PDF invoicing, and a full-featured admin dashboard with graphical sales stats (revenue, order counts, customer signup trends).',
+    emoji:'🏎️', title:'LuxeDrive — Luxury Car Rental Platform',
+    desc:'MERN car rental application with a booking engine that blocks date conflicts, JWT authentication, and client and admin dashboards.',
+    tags:['React','Vite','Tailwind CSS','Node.js','Express.js','MongoDB','Mongoose','JWT','Axios','Lucide React'],
+    type:'fullstack', badge:'b-fs', bLbl:'Full-Stack', demo:'', repo:'https://github.com/elhabchimohammed666-hub/location_voiture_app',
+    longDesc:'LuxeDrive is a modern car rental web application built with the MERN stack and styled with Tailwind CSS in a clean, minimalist glassmorphism look. The backend follows an MVC architecture with Mongoose schemas, and the REST API exposes public, client and admin routes.',
     features:[
-      'Instant Stripe payment processing & webhook setup',
-      'Real-time product stock level adjustment on purchase',
-      'Full statistics dashboard for store managers with interactive sales graphs',
-      'Responsive administrative table controls with searching, ordering, and data exports',
-      'Clean separation of customer portal and administrative modules'
-    ],
-    challenges:'Optimizing database queries to fetch catalog hierarchies and product variants without triggering the N+1 database connection problem. Solved by structuring Eloquent query mappings with eager loading (using `.with()`) and utilizing cached category trees.'
+      'Booking engine that automatically detects and blocks date conflicts on the same vehicle, with dynamic total price (daily rate + selected options)',
+      'JWT authentication with bcryptjs password hashing and role-based access (Client vs Administrator)',
+      'Real-time search plus an advanced filter drawer (brand, max budget, engine, gearbox, seats)',
+      'Vehicle detail page with photo gallery, technical specifications and a sticky booking widget',
+      'Client dashboard to follow bookings by status (confirmed, pending, completed, cancelled) and manage the profile',
+      'Admin dashboard with KPIs, full vehicle CRUD and one-click approval or rejection of bookings'
+    ]
   },{
-    emoji:'🔐', title:'SecureAuth — JWT Authentication System',
-    desc:'A production-ready authentication microservice with JWT tokens, OAuth 2.0 (Google/GitHub), role-based access control, rate limiting, and brute-force protection.',
-    tags:['PHP','Laravel','JWT','OAuth2','MySQL','REST API'],
-    type:'backend', badge:'b-be', bLbl:'Backend', demo:'#', repo:'#',
-    role:'Backend & Security Engineer',
-    duration:'1 Month',
-    longDesc:'SecureAuth is a production-hardened microservice designed to handle token-based and cookie-based web authentication securely. It abstracts the complexity of identity management, allowing developers to plug and play login mechanisms. Fully respects OAuth2 protocols and integrates multi-factor checks, encrypted user payloads, and automatic token refresh flows.',
+    emoji:'🏫', title:'Centre Omega — Tutoring & Language Centre Management',
+    desc:'MERN management system for a tutoring and language centre: students, monthly payments with receipts, teachers, timetable, absences, expenses and reports.',
+    tags:['React','Vite','Tailwind CSS','Recharts','Node.js','Express.js','MongoDB'],
+    type:'fullstack', badge:'b-fs', bLbl:'Full-Stack', demo:'', repo:'https://github.com/elhabchimohammed666-hub/gestion_ecole_app',
+    longDesc:'A complete management system for a school-support and language centre, built with the MERN stack, Tailwind CSS and Vite. It covers daily operations from student registration to financial reporting, with an interface available in Arabic (RTL by default), French and English.',
     features:[
-      'Stateless authentication using cryptographically signed JSON Web Tokens (JWT)',
-      'Social sign-in with Google, GitHub, and Discord OAuth 2.0 flows',
-      'Advanced rate-limiting using the Token Bucket algorithm to protect routes',
-      'Encrypted storage of session identifiers to prevent session hijacking and replay attacks',
-      'Dynamic user access control (RBAC) via middleware interceptors'
-    ],
-    challenges:'Protecting authentication routes against automated brute-force attacks and credential stuffing without destroying the user experience. Solved by implementing dynamic exponential backoffs, rate-limiting headers, and a CAPTCHA threshold trigger after multiple failed attempts.'
+      'Interactive dashboard with key figures (students, teachers, paid / unpaid, revenue, absences) and summary widgets',
+      'Student management with school level, multiple subjects and assigned teachers, real-time search and level filter',
+      'Monthly payments with colour-coded statuses (paid, partial, unpaid), automatic remainder calculation and printable official receipts',
+      'Teacher records with PDF attendance lists, plus a weekly timetable grid with print and PDF export',
+      'Absence tracking with a direct WhatsApp alert button for parents, and a departed-students history with one-click re-enrolment',
+      'Centre expenses with automatic net profit, and interactive Recharts reports by subject, level and teacher'
+    ]
   },{
-    emoji:'📋', title:'TaskFlow — Real-Time Project Manager',
-    desc:'A collaborative kanban-style project management app with drag-and-drop boards, real-time WebSocket notifications, team roles, and file attachments.',
-    tags:['JavaScript','PHP','WebSockets','MySQL','CSS3','AJAX'],
-    type:'fullstack', badge:'b-fs', bLbl:'Full-Stack', demo:'#', repo:'#',
-    role:'Full-Stack Developer',
-    duration:'2 Months',
-    longDesc:'TaskFlow is a collaborative project management workspace designed to help teams stay aligned. Modelled after classic Kanban methodologies, users can drag and drop cards across lanes, assign tasks to members, set deadlines, and leave comments. Changes are synchronized instantly across all open sessions using WebSocket channels.',
+    emoji:'🦷', title:'Dentolio — Dental Clinic Management Software',
+    desc:'MERN software for managing a dental clinic, with a React frontend, an Express/Node API, MongoDB and demo seed data.',
+    tags:['MongoDB','Express.js','React','Node.js'],
+    type:'fullstack', badge:'b-fs', bLbl:'Full-Stack', demo:'', repo:'https://github.com/elhabchimohammed666-hub/dentaire_app',
+    longDesc:'Dentolio is a complete dental clinic management application built with the MERN stack. The React frontend talks to an Express and Node.js API backed by MongoDB, and the repository includes a seed script with demo data and a one-click Windows launcher.',
     features:[
-      'Fluid Kanban board with drag-and-drop mechanics (HTML5 Drag & Drop API)',
-      'Instant bi-directional state sync utilizing Socket.io / Laravel Reverb Websockets',
-      'In-app notifications when assigned to card tasks or tagged in comments',
-      'Custom file uploads per task card with secure storage and access controls',
-      'Activity log tracker documenting all card movement and edits in the project board'
-    ],
-    challenges:'Managing concurrent changes when two team members move the same card at once, creating race conditions. Solved by applying optimistic UI updates on the frontend while enforcing server-side state confirmation via atomic SQL transactions.'
-  },{
-    emoji:'🎨', title:'PortfolioKit — Animated Portfolio Builder',
-    desc:'A dynamic, theme-switchable portfolio generator built with vanilla HTML, CSS animations, and JS. Zero dependencies — pure front-end craftsmanship.',
-    tags:['HTML5','CSS3','JavaScript','SVG Animations','LocalStorage'],
-    type:'frontend', badge:'b-fe', bLbl:'Frontend', demo:'#', repo:'#',
-    role:'Frontend UI/UX Specialist',
-    duration:'2 Weeks',
-    longDesc:'PortfolioKit is a template generation engine designed for developers to build clean, ultra-responsive, and high-performance portfolios. Focused on pixel-perfect layouts, modern glassmorphism aesthetic styling, theme switching triggers, and animations. Built from scratch with zero heavy CSS or JS frameworks, ensuring instant loading speeds.',
-    features:[
-      'Highly performant theme switcher engine (Dark/Light) utilizing LocalStorage values',
-      'Staggered intersection observer reveal animations that hook into page scrolls',
-      'Responsive layout grids scaling perfectly from mobile phones up to 4K screens',
-      'Interactive SVG particles floating in the background without affecting layout flow',
-      'Ultra-lightweight bundle loading in under 200ms with a 100/100 Lighthouse performance score'
-    ],
-    challenges:'Maintaining high performance and smooth 60fps animations while rendering dynamic floating particles in the background. Solved by offloading the particle movements from the main JS thread onto pure CSS hardware-accelerated animations using `will-change` properties.'
+      'Full-stack MERN architecture: React interface, Express/Node.js API and MongoDB database',
+      'Seed script (npm run seed) that loads demo data for quick testing',
+      'One-click Windows launcher script that checks MongoDB, starts the API and the frontend, and opens the browser',
+      'Step-by-step PDF guide included in the repository to rebuild the project from scratch'
+    ]
   }
 ];
 
@@ -4205,9 +4187,9 @@ function renderProjects(typeFilter='all', skillFilter=null){
           <button class="btn btn-p btn-sm btn-details" data-index="${PROJECTS.indexOf(p)}">
             <i class="fa-solid fa-circle-info"></i>Details
           </button>
-          <a href="${p.demo}" class="btn btn-o btn-sm" target="_blank" rel="noopener noreferrer">
+          ${p.demo ? `<a href="${p.demo}" class="btn btn-o btn-sm" target="_blank" rel="noopener noreferrer">
             <i class="fa-solid fa-arrow-up-right-from-square"></i>Demo
-          </a>
+          </a>` : ''}
           <a href="${p.repo}" class="btn btn-o btn-sm" target="_blank" rel="noopener noreferrer">
             <i class="fa-brands fa-github"></i>GitHub
           </a>
@@ -4403,7 +4385,7 @@ function initForm(){
       console.error('EmailJS error:', err);
       btn.innerHTML  = '<i class="fa-solid fa-xmark"></i> Failed — try again';
       btn.style.cssText = 'background:#ef4444; box-shadow:0 6px 20px rgba(239,68,68,0.4)';
-      showFormAlert('error', '❌ Failed to send. Please email me directly at <a href="mailto:contact@elhabchii.dev" style="color:inherit;text-decoration:underline">contact@elhabchii.dev</a>');
+      showFormAlert('error', '❌ Failed to send. Please email me directly at <a href="mailto:elhabchimohammed666@gmail.com" style="color:inherit;text-decoration:underline">elhabchimohammed666@gmail.com</a>');
       setTimeout(() => {
         btn.innerHTML  = origHTML;
         btn.style.cssText = '';
@@ -4462,23 +4444,30 @@ function initCvDropdown(){
 }
 
 /* ----------------------------------------------------------------
-   GITHUB LIVE STATS INTEGRATION
+   GITHUB LIVE STATS INTEGRATION  (real data only — no placeholder numbers)
    ---------------------------------------------------------------- */
-const GITHUB_USERNAME = 'elhabchii';
+const GITHUB_USERNAME = 'elhabchimohammed666-hub';
 
 // Color mapping for languages
 const LANG_COLORS = {
-  'HTML': '#e34c26',
-  'CSS': '#563d7c',
-  'JavaScript': '#f1e05a',
-  'PHP': '#4f5d95',
-  'Python': '#3572A5',
-  'TypeScript': '#3178c6',
-  'Vue': '#41b883',
-  'Blade': '#f7523f',
-  'Shell': '#89e051',
-  'C': '#555555'
+  'HTML': '#e34c26', 'CSS': '#563d7c', 'JavaScript': '#f1e05a', 'PHP': '#4f5d95',
+  'Python': '#3572A5', 'TypeScript': '#3178c6', 'Vue': '#41b883', 'Blade': '#f7523f',
+  'Shell': '#89e051', 'C': '#555555'
 };
+
+// Short descriptions for repositories that have none on GitHub (taken from their READMEs)
+const REPO_DESCRIPTIONS = {
+  'location_voiture_app': 'LuxeDrive — MERN luxury car rental platform with booking engine and admin dashboard.',
+  'gestion_ecole_app': 'MERN management system for a tutoring and language centre (Centre Omega).',
+  'dentaire_app': 'Dentolio — MERN dental clinic management software.',
+  'E-commerce_app': 'React and Node.js application to manage purchase and sales orders.'
+};
+
+// Repositories hidden from the portfolio (compared in lowercase)
+const EXCLUDED_REPOS = ['portefolio', 'porte__folio', 'my_website', 'traiteur_app'];
+
+// Repositories known from the profile, used only if the GitHub API cannot be reached
+const KNOWN_REPOS = ['app_gestion_stock','dentaire_app','gestion_ecole_app','location_voiture_app','todolist_app','E-commerce_app'];
 
 /* ── helpers ── */
 function ghCellColor(n) {
@@ -4501,23 +4490,6 @@ function buildHeatmap(containerId, weeks) {
   }).join('');
 }
 
-function generateFakeHeatmap(numWeeks, daysPerWeek = 7) {
-  const cols = [];
-  for (let w = 0; w < numWeeks; w++) {
-    const col = [];
-    for (let d = 0; d < daysPerWeek; d++) {
-      const r = Math.random();
-      let n = 0;
-      if (r > 0.45) n = Math.floor(Math.random() * 5) + 1;
-      if (r > 0.8)  n = Math.floor(Math.random() * 8) + 5;
-      if (r > 0.95) n = Math.floor(Math.random() * 6) + 10;
-      col.push(n);
-    }
-    cols.push(col);
-  }
-  return cols;
-}
-
 function renderBarChart(monthlyData) {
   const el = document.getElementById('ghBarChart');
   if (!el) return;
@@ -4525,15 +4497,33 @@ function renderBarChart(monthlyData) {
   el.innerHTML = monthlyData.map(m => {
     const pct = Math.round((m.count / max) * 100);
     return `<div class="gh-bar-col">
-      <div class="gh-bar" style="height:${pct}%" title="${m.count} commits in ${m.label}"></div>
+      <div class="gh-bar" style="height:${pct}%" title="${m.count} contributions in ${m.label}"></div>
       <span class="gh-bar-lbl">${m.label}</span>
     </div>`;
   }).join('');
 }
 
-function renderRepos(repos) {
-  const reposGrid = document.getElementById('ghReposGrid');
+function ghNote(msg) {
+  return `<p style="color:var(--txt-3);font-size:.8rem;margin:.4rem 0">${msg}</p>`;
+}
+
+function renderLanguages(repos) {
+  const el = document.getElementById('ghLangList');
+  if (!el) return;
+  const counts = {}; let total = 0;
+  repos.forEach(r => { if (r.fork || !r.language) return; counts[r.language] = (counts[r.language] || 0) + 1; total++; });
+  if (!total) { el.innerHTML = ghNote('No language data available yet.'); return; }
+  el.innerHTML = Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([name, c]) => {
+    const pct = (c / total * 100).toFixed(1);
+    const col = LANG_COLORS[name] || '#60a5fa';
+    return `<div class="gh-lang-row"><div class="gh-lang-top"><span class="gh-lang-name"><span class="gh-lang-dot-sm" style="background:${col}"></span>${name}</span><span class="gh-lang-pct">${pct}%</span></div><div class="gh-lang-bar-track"><div class="gh-lang-bar-fill" style="width:${pct}%;background:${col}"></div></div></div>`;
+  }).join('');
+}
+
+function renderRepos(repos, gridId = 'ghReposGrid') {
+  const reposGrid = document.getElementById(gridId);
   if (!reposGrid) return;
+  if (!repos.length) { reposGrid.innerHTML = ghNote('No public repositories to display.'); return; }
   const langIcons = {
     'PHP':'fa-brands fa-php','JavaScript':'fa-brands fa-js','TypeScript':'fa-brands fa-js',
     'Python':'fa-brands fa-python','HTML':'fa-brands fa-html5','CSS':'fa-brands fa-css3-alt',
@@ -4542,12 +4532,13 @@ function renderRepos(repos) {
   reposGrid.innerHTML = repos.map(repo => {
     const langColor = LANG_COLORS[repo.language] || '#60a5fa';
     const icoClass  = langIcons[repo.language] || 'fa-solid fa-book-bookmark';
+    const desc = repo.description || REPO_DESCRIPTIONS[repo.name] || 'No description provided.';
     return `
       <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer" class="gh-repo-card" style="--gh-lc:${langColor}">
         <div class="gh-repo-ico" style="background:${langColor}22;color:${langColor}"><i class="${icoClass}"></i></div>
         <div class="gh-repo-body">
           <div class="gh-repo-name">${repo.name}</div>
-          <p class="gh-repo-desc">${repo.description || 'No description provided.'}</p>
+          <p class="gh-repo-desc">${desc}</p>
           <div class="gh-repo-meta">
             ${repo.language ? `<span class="gh-repo-lang"><span class="gh-lang-dot" style="background:${langColor}"></span><span>${repo.language}</span></span>` : ''}
             <span class="gh-repo-stat"><i class="fa-regular fa-star"></i> ${repo.stargazers_count}</span>
@@ -4559,12 +4550,46 @@ function renderRepos(repos) {
   }).join('');
 }
 
+/* Real contribution calendar (public GitHub contribution data, last 12 months) */
+async function loadContributions() {
+  const res = await fetch(`https://github-contributions-api.jogruber.de/v4/${GITHUB_USERNAME}?y=last`);
+  if (!res.ok) throw new Error('Contribution API error');
+  const data = await res.json();
+  const days = (data.contributions || []).map(d => ({ date: d.date, count: d.count || 0 }));
+  if (!days.length) throw new Error('No contribution data');
+  return days;
+}
+
+function toWeeks(days) {            // columns of 7 (Sun→Sat)
+  const weeks = []; let col = new Array(new Date(days[0].date + 'T00:00:00').getDay()).fill(0);
+  days.forEach(d => { col.push(d.count); if (col.length === 7) { weeks.push(col); col = []; } });
+  if (col.length) weeks.push(col);
+  return weeks;
+}
+
+function currentStreak(days) {
+  let i = days.length - 1, streak = 0;
+  if (days[i] && days[i].count === 0) i--;   // today may not have contributions yet
+  for (; i >= 0 && days[i].count > 0; i--) streak++;
+  return streak;
+}
+
+function monthlyTotals(days) {
+  const map = new Map();
+  days.forEach(d => { const k = d.date.slice(0, 7); map.set(k, (map.get(k) || 0) + d.count); });
+  return [...map.entries()].slice(-12).map(([k, count]) => ({
+    label: new Date(k + '-01T00:00:00').toLocaleString('en', { month: 'short' }), count
+  }));
+}
+
 async function initGithubStats() {
+  const set = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+
   // Sync contact links
   const ghContactText = document.querySelector('.ch-gh div:not(.ch-ico)');
   if (ghContactText) ghContactText.innerHTML = `<strong>GitHub</strong><span>github.com/${GITHUB_USERNAME}</span>`;
 
-  // Init tab switching
+  // Tab switching
   document.querySelectorAll('.gh-tab').forEach(tab => {
     tab.addEventListener('click', () => {
       document.querySelectorAll('.gh-tab').forEach(t => t.classList.remove('active'));
@@ -4575,67 +4600,76 @@ async function initGithubStats() {
     });
   });
 
-  // Render mini heatmap (12 weeks × 7 days)
-  buildHeatmap('ghHeatmapMini', generateFakeHeatmap(12));
-  // Render full heatmap (26 weeks)
-  buildHeatmap('ghHeatmapFull', generateFakeHeatmap(26));
-
-  // Monthly bar chart data
-  const monthlyData = [
-    {label:'Jan', count:78}, {label:'Feb', count:95}, {label:'Mar', count:112},
-    {label:'Apr', count:88}, {label:'May', count:134}, {label:'Jun', count:102},
-    {label:'Jul', count:67}, {label:'Aug', count:143}, {label:'Sep', count:119},
-    {label:'Oct', count:98}, {label:'Nov', count:155}, {label:'Dec', count:131},
-  ];
-  renderBarChart(monthlyData);
-
-  // Fallback data
-  const fallbackStats = { public_repos:18, stars:14, forks:7, followers:12, following:8 };
-  const fallbackRepos = [
-    { name:'gestimall-ecommerce', description:'Multi-vendor e-commerce platform with Laravel MVC, MySQL and Stripe payments.', html_url:`https://github.com/${GITHUB_USERNAME}/gestimall-ecommerce`, language:'PHP', stargazers_count:5, forks_count:2 },
-    { name:'secure-jwt-auth', description:'Production-ready auth microservice with rate limiting, Google OAuth and secure token lifecycle.', html_url:`https://github.com/${GITHUB_USERNAME}/secure-jwt-auth`, language:'PHP', stargazers_count:4, forks_count:3 },
-    { name:'realtime-kanban-board', description:'Collaborative task manager with WebSockets for instant synchronisation.', html_url:`https://github.com/${GITHUB_USERNAME}/realtime-kanban-board`, language:'JavaScript', stargazers_count:3, forks_count:1 },
-  ];
-
   function applyStats(u, stars, forks) {
-    const set = (id, v) => { const el = document.getElementById(id); if(el) el.textContent = v; };
     set('ghRepos',       u.public_repos);
     set('ghStars',       stars);
     set('ghForks',       forks);
     set('ghFollowers',   u.followers);
     set('ghFollowing',   u.following);
-    set('ghTotalContrib','2,900+');
-    set('ghMemberSince', new Date(u.created_at).getFullYear());
-    // Avatar
+    set('ghMemberSince', u.created_at ? new Date(u.created_at).getFullYear() : '—');
     const img = document.getElementById('ghAvatar');
     if (img && u.avatar_url) img.src = u.avatar_url;
     set('ghDisplayName', u.name || u.login);
     set('ghLogin',       u.login);
     if (u.bio) set('ghBio', u.bio);
-    // Visit link
     const vbtn = document.getElementById('ghVisitBtn');
     if (vbtn) vbtn.href = u.html_url;
     const plink = document.getElementById('ghProfileLink');
     if (plink) { plink.href = u.html_url; plink.textContent = `github.com/${u.login}`; }
   }
 
+  // Account + repositories (real GitHub API)
   try {
     const [userRes, reposRes] = await Promise.all([
       fetch(`https://api.github.com/users/${GITHUB_USERNAME}`),
-      fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=10`)
+      fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100`)
     ]);
     if (!userRes.ok || !reposRes.ok) throw new Error('API error');
     const userData  = await userRes.json();
     const reposData = await reposRes.json();
-    const nonFork   = reposData.filter(r => !r.fork).slice(0,3);
+    const shown = reposData.filter(r => !EXCLUDED_REPOS.includes(r.name.toLowerCase()));
     let stars = 0, forks = 0;
-    reposData.forEach(r => { stars += r.stargazers_count; forks += r.forks_count; });
+    shown.forEach(r => { stars += r.stargazers_count; forks += r.forks_count; });
     applyStats(userData, stars, forks);
-    renderRepos(nonFork.length ? nonFork : fallbackRepos);
+    renderLanguages(shown);
+    renderRepos(shown.filter(r => !r.fork).slice(0, 3));
+    const allRepos = shown.filter(r => !r.fork);
+    renderRepos(allRepos, 'ghAllRepos');
+    set('ghAllCount', `(${allRepos.length})`);
+    set('ghRepos', allRepos.length);
   } catch (e) {
-    console.warn('GitHub API unavailable — using fallback data.', e);
-    applyStats({ public_repos:fallbackStats.public_repos, followers:fallbackStats.followers, following:fallbackStats.following, stars:fallbackStats.stars, forks:fallbackStats.forks, created_at:'2022-01-01', login:GITHUB_USERNAME, name:'Elhabchi Mohammed', bio:'Full-Stack Developer · PHP / Laravel · Web Security', html_url:`https://github.com/${GITHUB_USERNAME}`, avatar_url:`https://avatars.githubusercontent.com/${GITHUB_USERNAME}` }, fallbackStats.stars, fallbackStats.forks);
-    renderRepos(fallbackRepos);
+    // API unavailable (e.g. rate limit): show only values read from the real profile, never invented ones
+    console.warn('GitHub API unavailable — using last known profile data.', e);
+    applyStats({ public_repos:21, followers:1, following:4, login:GITHUB_USERNAME, name:'Elhabchi Mohammed',
+                 html_url:`https://github.com/${GITHUB_USERNAME}`,
+                 bio:'Full-Stack Developer dedicated to building responsive, efficient, and scalable web solutions.' }, 0, 0);
+    renderLanguages([{ language:'JavaScript' }]);
+    renderRepos(['location_voiture_app','dentaire_app','gestion_ecole_app'].map(n => ({
+      name:n, description:'', html_url:`https://github.com/${GITHUB_USERNAME}/${n}`,
+      language:'JavaScript', stargazers_count: 0, forks_count:0 })));
+    renderRepos(KNOWN_REPOS.map(n => ({
+      name:n, description:'', html_url:`https://github.com/${GITHUB_USERNAME}/${n}`,
+      language:'JavaScript', stargazers_count: 0, forks_count:0 })), 'ghAllRepos');
+    set('ghAllCount', `(${KNOWN_REPOS.length}+)`);
+  }
+
+  // Real contribution data
+  try {
+    const days = await loadContributions();
+    const total = days.reduce((s, d) => s + d.count, 0);
+    set('ghTotalContrib', total.toLocaleString('en'));
+    const s = currentStreak(days);
+    set('ghCurrentStreak', `${s} day${s === 1 ? '' : 's'}`);
+    buildHeatmap('ghHeatmapMini', toWeeks(days.slice(-84)));
+    buildHeatmap('ghHeatmapFull', toWeeks(days.slice(-182)));
+    renderBarChart(monthlyTotals(days));
+  } catch (e) {
+    console.warn('Contribution data unavailable.', e);
+    set('ghTotalContrib', '—'); set('ghCurrentStreak', '—');
+    ['ghHeatmapMini', 'ghHeatmapFull', 'ghBarChart'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.innerHTML = ghNote('Contribution data is temporarily unavailable.');
+    });
   }
 }
 
@@ -4668,10 +4702,10 @@ function initProjectModal() {
         </div>
       </div>
 
-      <div class="pm-meta-grid">
-        <div class="pm-meta-item"><strong>Role:</strong> ${p.role || 'Developer'}</div>
-        <div class="pm-meta-item"><strong>Duration:</strong> ${p.duration || 'N/A'}</div>
-      </div>
+      ${(p.role || p.duration) ? `<div class="pm-meta-grid">
+        ${p.role ? `<div class="pm-meta-item"><strong>Role:</strong> ${p.role}</div>` : ''}
+        ${p.duration ? `<div class="pm-meta-item"><strong>Duration:</strong> ${p.duration}</div>` : ''}
+      </div>` : ''}
 
       <div class="pm-sec-title"><i class="fa-solid fa-file-lines"></i> Project Overview</div>
       <p class="pm-desc">${p.longDesc || p.desc}</p>
@@ -4699,9 +4733,9 @@ function initProjectModal() {
       </div>
 
       <div class="pm-acts">
-        <a href="${p.demo}" class="btn btn-p" target="_blank" rel="noopener noreferrer">
+        ${p.demo ? `<a href="${p.demo}" class="btn btn-p" target="_blank" rel="noopener noreferrer">
           <i class="fa-solid fa-arrow-up-right-from-square"></i>Live Demo
-        </a>
+        </a>` : ''}
         <a href="${p.repo}" class="btn btn-o" target="_blank" rel="noopener noreferrer">
           <i class="fa-brands fa-github"></i>GitHub Code
         </a>
@@ -5469,7 +5503,7 @@ function initMarquee() {
       <span class="term-dot red"   onclick="closeTerm()" title="Close"></span>
       <span class="term-dot yellow" title="Minimize"></span>
       <span class="term-dot green"  title="Maximize"></span>
-      <span class="term-title-text">elhabchii@portfolio ~ zsh</span>
+      <span class="term-title-text">elhabchi@portfolio ~ zsh</span>
       <button class="term-maximize" onclick="closeTerm()" title="Close (Esc)">⌘W</button>
     </div>
 
@@ -5495,8 +5529,8 @@ function initMarquee() {
     alias   : 'Othman4dev',
     role    : 'Full-Stack Developer & Web Security Enthusiast',
     location: 'Morocco 🇲🇦',
-    email   : 'contact@elhabchii.dev',
-    github  : 'github.com/elhabchii',
+    email   : 'elhabchimohammed666@gmail.com',
+    github  : 'github.com/elhabchimohammed666-hub',
     bio     : 'I craft secure, scalable web applications with PHP/Laravel on the backend and clean HTML/CSS/JS on the frontend. Passionate about web security, clean architecture, and elegant UX.',
     skills  : [
       { cat:'Backend',  items:['PHP','Laravel','MySQL','REST API','JWT','OAuth2'] },
@@ -5507,15 +5541,14 @@ function initMarquee() {
   };
 
   const PROJECTS = [
-    { n:'GestiMall',   t:'E-Commerce Platform',         stack:'PHP · Laravel · MySQL · Stripe',    desc:'Multi-vendor marketplace with payment gateway, admin panel & advanced role system.' },
-    { n:'SecureAuth',  t:'JWT Auth Microservice',        stack:'PHP · Laravel · OAuth2 · JWT',      desc:'Production-ready auth system with 2FA, rate-limiting & brute-force protection.' },
-    { n:'TaskFlow',    t:'Real-Time Project Manager',    stack:'JS · PHP · WebSockets · MySQL',     desc:'Kanban board with drag-and-drop, live sync & team collaboration features.' },
-    { n:'PortfolioKit',t:'Animated Portfolio Builder',   stack:'HTML5 · CSS3 · JavaScript',         desc:'Zero-dependency portfolio generator with theme switching & 60fps animations.' },
+    { n:'LuxeDrive',         t:'Luxury Car Rental Platform',      stack:'React · Node.js · Express · MongoDB · JWT', desc:'Booking engine with date-conflict detection, client and admin dashboards.' },
+    { n:'Centre Omega',      t:'Tutoring Centre Management',      stack:'React · Node.js · Express · MongoDB',       desc:'Students, payments & receipts, teachers, timetable, absences and reports.' },
+    { n:'Dentolio',          t:'Dental Clinic Management',        stack:'MongoDB · Express · React · Node.js',       desc:'Clinic management software with demo seed data and one-click launcher.' },
   ];
 
   const SOCIALS = [
-    { k:'github',   v:'https://github.com/elhabchii' },
-    { k:'email',    v:'contact@elhabchii.dev' },
+    { k:'github',   v:'https://github.com/elhabchimohammed666-hub' },
+    { k:'email',    v:'elhabchimohammed666@gmail.com' },
   ];
 
   /* ── State ── */
@@ -5620,10 +5653,10 @@ function initMarquee() {
       case 'social':    cmdSocial();   break;
       case 'clear':     output.innerHTML = ''; return;
       case 'whoami':    print(`<span class="t-green">${ME.alias}</span> — ${ME.role}`); break;
-      case 'pwd':       print(`<span class="t-cyan">/home/visitor/elhabchii-portfolio</span>`); break;
+      case 'pwd':       print(`<span class="t-cyan">/home/visitor/elhabchi-portfolio</span>`); break;
       case 'ls':        cmdLs();       break;
       case 'date':      print(`<span class="t-cyan">${new Date().toUTCString()}</span>`); break;
-      case 'uname':     print(`<span class="t-dim">Portfolio-OS 2.0.0 elhabchii-kernel x86_64 GNU/Linux</span>`); break;
+      case 'uname':     print(`<span class="t-dim">Portfolio-OS 2.0.0 elhabchi-kernel x86_64 GNU/Linux</span>`); break;
       case 'echo':      print(`<span class="t-white">${args.slice(1).join(' ') || ''}</span>`); break;
       case 'sudo':      cmdSudo();     break;
       case 'hack':      cmdHack();     break;
