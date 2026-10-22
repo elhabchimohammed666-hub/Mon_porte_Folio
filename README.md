@@ -27,5 +27,5 @@ N'hésitez pas à me contacter ou à consulter mes travaux via les liens suivant
 
 - **Nom :** Elhabchi Mohammed
 - **Rôle :** Développeur Web Full Stack
-- **LinkedIn :** [Mohammed Elhabchi](https://www.linkedin.com/in/votre-profil)
-- **Email :** [votre.email@example.com](mailto:votre.email@example.com)
+- **LinkedIn :** [Mohammed Elhabchi](https://www.linkedin.com/in/mohammed-elhabchi-6a7bb237b/)
+- **Email :** [votre.email@example.com](mailto:elhabchimohammed666@gmail.com)
