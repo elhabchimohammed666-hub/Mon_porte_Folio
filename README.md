@@ -20,3 +20,12 @@ Ce portfolio a été conçu pour offrir une expérience utilisateur fluide, mode
 - **Back-End :** Node.js / Express.js / PHP (Laravel)
 - **Base de Données :** MongoDB / PostgreSQL / MySQL
 - **Outils & Déploiement :** Git, GitHub, Postman, Vercel / Netlify
+
+## 📬 Contact & Liens
+
+N'hésitez pas à me contacter ou à consulter mes travaux via les liens suivants :
+
+- **Nom :** Elhabchi Mohammed
+- **Rôle :** Développeur Web Full Stack
+- **LinkedIn :** [Mohammed Elhabchi](https://www.linkedin.com/in/votre-profil)
+- **Email :** [votre.email@example.com](mailto:votre.email@example.com)
