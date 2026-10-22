@@ -3075,7 +3075,7 @@ input[type="range"].cust-range::-webkit-slider-thumb:hover { transform: scale(1.
 <script type="text/javascript">
    (function(){
       emailjs.init({
-        publicKey: "l7xKiCMnwYK5No22u",
+        publicKey: "MAF4Dr-5y_-L6h3Q1",
       });
    })();
 </script>
@@ -4385,15 +4385,21 @@ function initForm(){
     btn.disabled  = true;
 
     // ── EmailJS send ──
-    const SERVICE_ID  = 'service_6frba7p';
+    const SERVICE_ID  = 'service_wgzu63h';
     const TEMPLATE_ID = 'template_93lid7l';
-    const PUBLIC_KEY  = 'l7xKiCMnwYK5No22u';
+    const PUBLIC_KEY  = 'MAF4Dr-5y_-L6h3Q1';
 
     const templateParams = {
+      // variables used by the EmailJS template "Contact Us"
+      name        : name,
+      email       : email,
+      title       : subject,
+      time        : new Date().toLocaleString('en-GB'),
+      message     : message,
+      // extra aliases (harmless if the template does not use them)
       from_name   : name,
       from_email  : email,
-      subject     : subject || 'New message from portfolio',
-      message     : message,
+      subject     : subject,
       reply_to    : email,
       to_email    : 'elhabchimohammed666@gmail.com',
     };
@@ -4421,7 +4427,11 @@ function initForm(){
       console.error('EmailJS error:', err);
       btn.innerHTML  = '<i class="fa-solid fa-xmark"></i> Failed — try again';
       btn.style.cssText = 'background:#ef4444; box-shadow:0 6px 20px rgba(239,68,68,0.4)';
-      showFormAlert('error', '❌ Failed to send. Please email me directly at <a href="mailto:elhabchimohammed666@gmail.com" style="color:inherit;text-decoration:underline">elhabchimohammed666@gmail.com</a>');
+      // Show the real reason returned by EmailJS (helps to diagnose the configuration)
+      const detail = err && (err.text || err.message)
+        ? ' [' + (err.status ? err.status + ': ' : '') + String(err.text || err.message).replace(/[<>&]/g, '') + ']'
+        : '';
+      showFormAlert('error', '❌ Failed to send' + detail + '. Please email me directly at <a href="mailto:elhabchimohammed666@gmail.com" style="color:inherit;text-decoration:underline">elhabchimohammed666@gmail.com</a>');
       setTimeout(() => {
         btn.innerHTML  = origHTML;
         btn.style.cssText = '';
